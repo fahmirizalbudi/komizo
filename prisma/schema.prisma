@@ -1,0 +1,129 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  password      String
+
+  accounts Account[]
+  sessions Session[]
+
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  bookmarks Bookmark[]
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Comic {
+  id          String  @id @default(cuid())
+  title       String
+  description String?
+  coverUrl    String?
+  author      String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  genres   ComicGenre[]
+  chapters Chapter[]
+}
+
+model Chapter {
+  id      String @id @default(cuid())
+  comicId String
+  title   String
+  number  Int
+  pages   Json
+
+  comic Comic @relation(fields: [comicId], references: [id], onDelete: Cascade)
+
+  bookmarks Bookmark[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([comicId, number])
+}
+
+model Genre {
+  id     String       @id @default(cuid())
+  name   String       @unique
+  comics ComicGenre[]
+}
+
+model ComicGenre {
+  id      String @id @default(cuid())
+  comicId String
+  genreId String
+
+  comic Comic @relation(fields: [comicId], references: [id], onDelete: Cascade)
+  genre Genre @relation(fields: [genreId], references: [id], onDelete: Cascade)
+
+  @@unique([comicId, genreId])
+}
+
+model Bookmark {
+  id        String @id @default(cuid())
+  userId    String
+  chapterId String
+  page      Int    @default(1)
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  chapter Chapter @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, chapterId])
+}
