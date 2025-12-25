@@ -2,6 +2,7 @@ import Credentials from 'next-auth/providers/credentials'
 import { PrismaAdapter } from '@next-auth/prisma-adapter'
 import bcrypt from 'bcryptjs'
 import { prisma } from '@/lib/prisma'
+import { getServerSession } from 'next-auth'
 
 export const authOptions = {
   secret: process.env.NEXTAUTH_SECRET,
@@ -34,3 +35,5 @@ export const authOptions = {
     }),
   ],
 }
+
+export const auth = () => getServerSession(authOptions)
