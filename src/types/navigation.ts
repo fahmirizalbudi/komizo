@@ -2,7 +2,7 @@ import { Icon } from './icon'
 
 export type Navigation = {
   label: string
+  description?: string
   url: string
-  segment?: string | null
   icon?: Icon
 }
