@@ -7,7 +7,7 @@ type AdminHeaderProps = {
 
 const AdminHeader = ({ title, subtitle }: AdminHeaderProps) => {
   return (
-    <header className="h-30 flex items-center justify-between z-20">
+    <header className="h-30 flex items-center justify-between z-20 mb-2">
       <div className="flex flex-col gap-y-1.25">
         <h1 className="text-2xl font-bold text-white">{title}</h1>
         <p className="text-zinc-500 text-sm">{subtitle}</p>
