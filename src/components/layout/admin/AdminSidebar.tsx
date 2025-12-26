@@ -1,15 +1,13 @@
 import { getAdminNavigations } from '@/lib/navigations'
 import AdminSidebarMenu from './AdminSidebarMenu'
 import { KomizoIcon } from '@/components/ui/Icon'
-import { Session } from 'next-auth'
 
 type AdminSidebarProps = {
   pathname: string
-  session: Session
 }
 
-const AdminSidebar = ({ pathname, session }: AdminSidebarProps) => {
-  const navigations = getAdminNavigations(session)
+const AdminSidebar = ({ pathname }: AdminSidebarProps) => {
+  const navigations = getAdminNavigations()
 
   return (
     <aside className="w-74 bg-neutral-950 flex-col hidden md:flex pl-6 pr-5.5 py-8 border-r border-white/5">

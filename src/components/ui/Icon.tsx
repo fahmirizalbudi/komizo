@@ -1,14 +1,21 @@
 import { Icon } from '@/types/icon'
 
-type IconProps = {
+export type IconProps = {
   width?: number
   height?: number
   fillColor?: string
   className?: string
 }
 
-export const OverviewIcon = ({ width = 26, height = 26, fillColor = 'currentColor', className }: IconProps): Icon => (
-  <svg width={width} height={height} className={className} viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+export const OverviewIcon = ({ width = 26, height = 26, fillColor = 'currentColor', className }: IconProps) => (
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 25 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -36,8 +43,15 @@ export const OverviewIcon = ({ width = 26, height = 26, fillColor = 'currentColo
   </svg>
 )
 
-export const UsersIcon = ({ width = 26, height = 26, fillColor = 'currentColor', className }: IconProps): Icon => (
-  <svg width={width} height={height} className={className} viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+export const UsersIcon = ({ width = 26, height = 26, fillColor = 'currentColor', className }: IconProps) => (
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 25 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       d="M15.3289 11.4955C14.4941 11.4955 13.724 11.2188 13.1051 10.7522C13.3972 10.3301 13.6284 9.86262 13.786 9.36254C14.1827 9.7539 14.7276 9.99545 15.3289 9.99545C16.5422 9.99545 17.5258 9.01185 17.5258 7.79851C17.5258 6.58517 16.5422 5.60156 15.3289 5.60156C14.7276 5.60156 14.1827 5.84312 13.786 6.23449C13.6284 5.73441 13.3972 5.26698 13.1051 4.84488C13.7239 4.37824 14.4941 4.10156 15.3289 4.10156C17.3706 4.10156 19.0258 5.75674 19.0258 7.79851C19.0258 9.84027 17.3706 11.4955 15.3289 11.4955Z"
       fill={fillColor}
@@ -59,8 +73,15 @@ export const UsersIcon = ({ width = 26, height = 26, fillColor = 'currentColor',
   </svg>
 )
 
-export const GenresIcon = ({ width = 26, height = 26, fillColor = 'currentColor', className }: IconProps): Icon => (
-  <svg width={width} height={height} className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+export const GenresIcon = ({ width = 26, height = 26, fillColor = 'currentColor', className }: IconProps) => (
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       d="M12.8375 4.96984C12.2958 4.77568 11.7035 4.77568 11.1619 4.96984L2.88741 7.93598C1.7146 8.3564 1.71462 10.015 2.88742 10.4354L11.1619 13.4016C11.7035 13.5957 12.2958 13.5957 12.8375 13.4016L21.1119 10.4354C22.2847 10.015 22.2847 8.3564 21.1119 7.93598L12.8375 4.96984ZM11.668 6.38186C11.8824 6.305 12.1169 6.305 12.3313 6.38186L20.153 9.1857L12.3313 11.9895C12.1169 12.0664 11.8824 12.0664 11.668 11.9895L3.84633 9.1857L11.668 6.38186Z"
       fill={fillColor}
@@ -72,8 +93,15 @@ export const GenresIcon = ({ width = 26, height = 26, fillColor = 'currentColor'
   </svg>
 )
 
-export const ComicsIcon = ({ width = 26, height = 26, fillColor = 'currentColor', className }: IconProps): Icon => (
-  <svg width={width} height={height} className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+export const ComicsIcon = ({ width = 26, height = 26, fillColor = 'currentColor', className }: IconProps) => (
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -84,7 +112,14 @@ export const ComicsIcon = ({ width = 26, height = 26, fillColor = 'currentColor'
 )
 
 export const BookmarksIcon = ({ width = 26, height = 26, fillColor = 'currentColor', className }: IconProps) => (
-  <svg width={width} height={height} className={className} viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 25 25"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -113,7 +148,14 @@ export const KomizoIcon = ({ width = 200, height = 58, className }: IconProps) =
 )
 
 export const SearchIcon = ({ width = 26, height = 26, fillColor = 'currentColor', className }: IconProps) => (
-  <svg width={width} height={height} className={className} viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 24 25"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -124,7 +166,14 @@ export const SearchIcon = ({ width = 26, height = 26, fillColor = 'currentColor'
 )
 
 export const ProfileIcon = ({ width = 26, height = 26, fillColor = 'currentColor', className }: IconProps) => (
-  <svg className={className} width={width} height={height} viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    className={className}
+    width={width}
+    height={height}
+    viewBox="0 0 25 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -133,6 +182,66 @@ export const ProfileIcon = ({ width = 26, height = 26, fillColor = 'currentColor
     />
     <path
       d="M12.0235 12.1895C14.6935 12.1895 16.7835 12.9395 18.2335 14.4195V14.4095C20.2801 16.4956 20.2739 19.2563 20.2735 19.4344L20.2735 19.4395C20.2635 19.8495 19.9335 20.1795 19.5235 20.1795H19.5135C19.0935 20.1695 18.7735 19.8295 18.7735 19.4195C18.7735 19.3695 18.7735 17.0895 17.1535 15.4495C15.9935 14.2795 14.2635 13.6795 12.0235 13.6795C9.78346 13.6795 8.05346 14.2795 6.89346 15.4495C5.27346 17.0995 5.27346 19.3995 5.27346 19.4195C5.27346 19.8295 4.94346 20.1795 4.53346 20.1795C4.17346 20.1995 3.77346 19.8595 3.77346 19.4495L3.77345 19.4448C3.77305 19.2771 3.76646 16.506 5.81346 14.4195C7.26346 12.9395 9.35346 12.1895 12.0235 12.1895Z"
+      fill={fillColor}
+    />
+  </svg>
+)
+
+export const EditIcon = ({ width = 26, height = 26, fillColor = 'currentColor', className }: IconProps) => (
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M19.3028 3.7801C18.4241 2.90142 16.9995 2.90142 16.1208 3.7801L14.3498 5.5511C14.3442 5.55633 14.3387 5.56166 14.3333 5.5671C14.3279 5.57253 14.3225 5.57803 14.3173 5.58359L5.83373 14.0672C5.57259 14.3283 5.37974 14.6497 5.27221 15.003L4.05205 19.0121C3.9714 19.2771 4.04336 19.565 4.23922 19.7608C4.43508 19.9567 4.72294 20.0287 4.98792 19.948L8.99703 18.7279C9.35035 18.6203 9.67176 18.4275 9.93291 18.1663L20.22 7.87928C21.0986 7.0006 21.0986 5.57598 20.22 4.6973L19.3028 3.7801ZM14.8639 7.15833L6.89439 15.1278C6.80735 15.2149 6.74306 15.322 6.70722 15.4398L5.8965 18.1036L8.56029 17.2928C8.67806 17.257 8.7852 17.1927 8.87225 17.1057L16.8417 9.13619L14.8639 7.15833ZM17.9024 8.07553L19.1593 6.81862C19.4522 6.52572 19.4522 6.05085 19.1593 5.75796L18.2421 4.84076C17.9492 4.54787 17.4743 4.54787 17.1814 4.84076L15.9245 6.09767L17.9024 8.07553Z"
+      fill={fillColor}
+    />
+  </svg>
+)
+
+export const DeleteIcon = ({ width = 26, height = 26, fillColor = 'currentColor', className }: IconProps) => (
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M14.7223 12.7585C14.7426 12.3448 14.4237 11.9929 14.01 11.9726C13.5963 11.9522 13.2444 12.2711 13.2241 12.6848L12.9999 17.2415C12.9796 17.6552 13.2985 18.0071 13.7122 18.0274C14.1259 18.0478 14.4778 17.7289 14.4981 17.3152L14.7223 12.7585Z"
+      fill={fillColor}
+    />
+    <path
+      d="M9.98802 11.9726C9.5743 11.9929 9.25542 12.3448 9.27577 12.7585L9.49993 17.3152C9.52028 17.7289 9.87216 18.0478 10.2859 18.0274C10.6996 18.0071 11.0185 17.6552 10.9981 17.2415L10.774 12.6848C10.7536 12.2711 10.4017 11.9522 9.98802 11.9726Z"
+      fill={fillColor}
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M10.249 2C9.00638 2 7.99902 3.00736 7.99902 4.25V5H5.5C4.25736 5 3.25 6.00736 3.25 7.25C3.25 8.28958 3.95503 9.16449 4.91303 9.42267L5.54076 19.8848C5.61205 21.0729 6.59642 22 7.78672 22H16.2113C17.4016 22 18.386 21.0729 18.4573 19.8848L19.085 9.42267C20.043 9.16449 20.748 8.28958 20.748 7.25C20.748 6.00736 19.7407 5 18.498 5H15.999V4.25C15.999 3.00736 14.9917 2 13.749 2H10.249ZM14.499 5V4.25C14.499 3.83579 14.1632 3.5 13.749 3.5H10.249C9.83481 3.5 9.49902 3.83579 9.49902 4.25V5H14.499ZM5.5 6.5C5.08579 6.5 4.75 6.83579 4.75 7.25C4.75 7.66421 5.08579 8 5.5 8H18.498C18.9123 8 19.248 7.66421 19.248 7.25C19.248 6.83579 18.9123 6.5 18.498 6.5H5.5ZM6.42037 9.5H17.5777L16.96 19.7949C16.9362 20.191 16.6081 20.5 16.2113 20.5H7.78672C7.38995 20.5 7.06183 20.191 7.03807 19.7949L6.42037 9.5Z"
+      fill={fillColor}
+    />
+  </svg>
+)
+
+export const AddIcon = ({ width = 26, height = 26, fillColor = 'currentColor', className }: IconProps) => (
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12.0002 4.875C12.6216 4.875 13.1252 5.37868 13.1252 6V10.8752H18.0007C18.622 10.8752 19.1257 11.3789 19.1257 12.0002C19.1257 12.6216 18.622 13.1252 18.0007 13.1252H13.1252V18.0007C13.1252 18.622 12.6216 19.1257 12.0002 19.1257C11.3789 19.1257 10.8752 18.622 10.8752 18.0007V13.1252H6C5.37868 13.1252 4.875 12.6216 4.875 12.0002C4.875 11.3789 5.37868 10.8752 6 10.8752H10.8752V6C10.8752 5.37868 11.3789 4.875 12.0002 4.875Z"
       fill={fillColor}
     />
   </svg>

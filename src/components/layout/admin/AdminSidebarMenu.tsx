@@ -7,6 +7,8 @@ type AdminSidebarMenuProps = {
 }
 
 const AdminSidebarMenu = ({ navigation, isActive }: AdminSidebarMenuProps) => {
+  const Icon = navigation.icon
+
   return (
     <Link
       href={navigation.url}
@@ -16,7 +18,7 @@ const AdminSidebarMenu = ({ navigation, isActive }: AdminSidebarMenuProps) => {
           : 'text-zinc-500 hover:text-white hover:bg-white/5 rounded-2xl transition-all'
       }`}
     >
-      {navigation?.icon && navigation.icon}
+      {Icon && <Icon />}
       <span className="font-medium text-sm-plus">{navigation.label}</span>
     </Link>
   )

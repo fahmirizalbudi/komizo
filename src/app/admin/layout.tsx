@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { auth } from '@/lib/auth'
 import AdminLayoutWrapper from '@/components/layout/admin/AdminLayoutWrapper'
 import { Session } from 'next-auth'
+import SessionProviderWrapper from '@/components/layout/admin/SessionProviderWrapper'
 
 export const metadata: Metadata = {
   title: 'Komizo - Overview',
@@ -13,7 +14,9 @@ export default async function AdminLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const session = await auth()
-
-  return <AdminLayoutWrapper session={session as Session}>{children}</AdminLayoutWrapper>
+  return (
+    <SessionProviderWrapper>
+      <AdminLayoutWrapper>{children}</AdminLayoutWrapper>
+    </SessionProviderWrapper>
+  )
 }

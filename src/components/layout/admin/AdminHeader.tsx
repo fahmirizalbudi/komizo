@@ -22,7 +22,7 @@ const AdminHeader = ({ title, subtitle }: AdminHeaderProps) => {
           <input
             type="text"
             placeholder="Search..."
-            className="bg-zinc-900 border border-transparent focus:border-brand/30 text-sm rounded-full pl-11 pr-6 py-3 w-64 focus:outline-none focus:ring-2 focus:ring-brand/20 text-zinc-200 placeholder-zinc-600 transition-all shadow-lg"
+            className="bg-zinc-900 border border-transparent focus:border-brand/30 text-sm rounded-2xl pl-11 pr-6 py-3 w-64 focus:outline-none focus:ring-2 focus:ring-brand/20 text-zinc-200 placeholder-zinc-600 transition-all shadow-lg"
           />
         </div>
         <button className="relative p-3 bg-zinc-900 rounded-full text-zinc-400 hover:text-white transition-colors hover:bg-zinc-800 shadow-lg cursor-pointer">
