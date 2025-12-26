@@ -32,5 +32,15 @@ export function getAdminNavigations(): Navigation[] {
       description: 'Review and manage user bookmarks on comics efficiently.',
       icon: BookmarksIcon,
     },
+    {
+      label: 'Create User',
+      url: '/admin/users/create',
+      description: 'Use this form to create a new user by entering their user information.',
+    },
+    {
+      label: 'Edit User',
+      url: '/admin/users/*/edit',
+      description: 'Use this form to edit a exist user by entering their user information.',
+    },
   ]
 }

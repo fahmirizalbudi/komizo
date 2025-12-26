@@ -7,7 +7,7 @@ type AdminSidebarProps = {
 }
 
 const AdminSidebar = ({ pathname }: AdminSidebarProps) => {
-  const navigations = getAdminNavigations()
+  let navigations = getAdminNavigations().filter((n) => n.icon !== undefined)
 
   return (
     <aside className="w-74 bg-neutral-950 flex-col hidden md:flex pl-6 pr-5.5 py-8 border-r border-white/5">
@@ -15,9 +15,11 @@ const AdminSidebar = ({ pathname }: AdminSidebarProps) => {
         <KomizoIcon className="w-auto h-10 relative bottom-[0.75]" />
       </div>
       <nav className="flex-1 space-y-3">
-        {navigations.map((navigation) => (
-          <AdminSidebarMenu key={navigation.url} navigation={navigation} isActive={pathname === navigation.url} />
-        ))}
+        {navigations.map((navigation) => {
+          const isActive =
+            navigation.url === '/admin' ? pathname === navigation.url : pathname.startsWith(navigation.url)
+          return <AdminSidebarMenu key={navigation.url} navigation={navigation} isActive={isActive} />
+        })}
       </nav>
     </aside>
   )
