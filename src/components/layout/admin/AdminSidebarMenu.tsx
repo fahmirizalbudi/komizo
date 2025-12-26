@@ -19,7 +19,7 @@ const AdminSidebarMenu = ({ navigation, isActive }: AdminSidebarMenuProps) => {
       }`}
     >
       {Icon && <Icon />}
-      <span className="font-medium text-sm-plus">{navigation.label}</span>
+      <span className="font-medium text-sm">{navigation.label}</span>
     </Link>
   )
 }

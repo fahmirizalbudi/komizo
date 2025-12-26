@@ -10,7 +10,7 @@ const AdminHeader = ({ title, subtitle }: AdminHeaderProps) => {
     <header className="h-30 flex items-center justify-between z-20">
       <div className="flex flex-col gap-y-1.25">
         <h1 className="text-2xl font-bold text-white">{title}</h1>
-        <p className="text-zinc-500 text-sm-plus">{subtitle}</p>
+        <p className="text-zinc-500 text-sm">{subtitle}</p>
       </div>
       <div className="flex items-center gap-6">
         <div className="relative hidden sm:block group">
