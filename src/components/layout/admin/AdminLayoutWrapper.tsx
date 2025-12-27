@@ -19,7 +19,12 @@ const AdminLayoutWrapper = ({ children }: AdminLayoutWrapperProps) => {
   const name = session?.user?.name ?? '~'
 
   const { title, subtitle } = useMemo(() => {
-    const nav = navigations.find((n) => n.url === pathname)
+    const nav = navigations.find((n) => {
+      const pattern = '^' + n.url.replace(/\*/g, '[^/]+') + '$'
+      const regex = new RegExp(pattern)
+      return regex.test(pathname)
+    })
+    console.log(pathname.replace('/*', ''))
     return {
       title: nav?.label ?? '',
       subtitle: nav?.url === '/admin' ? `Hello ${name}, welcome to the overview section.` : nav?.description ?? '',
