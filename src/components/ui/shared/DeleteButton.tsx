@@ -8,9 +8,9 @@ const DeleteButton = ({ onClick }: DeleteButtonProps) => {
   return (
     <button
       onClick={onClick}
-      className="p-2.25 rounded-full bg-white/5 hover:bg-white hover:text-black transition cursor-pointer"
+      className="p-3 rounded-full bg-white/5 hover:bg-white hover:text-black transition cursor-pointer"
     >
-      <DeleteIcon width={24} height={24} />
+      <DeleteIcon width={22.5} height={22.5} />
     </button>
   )
 }
