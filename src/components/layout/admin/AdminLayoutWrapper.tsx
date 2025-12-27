@@ -24,7 +24,7 @@ const AdminLayoutWrapper = ({ children }: AdminLayoutWrapperProps) => {
       const regex = new RegExp(pattern)
       return regex.test(pathname)
     })
-    console.log(pathname.replace('/*', ''))
+
     return {
       title: nav?.label ?? '',
       subtitle: nav?.url === '/admin' ? `Hello ${name}, welcome to the overview section.` : nav?.description ?? '',
