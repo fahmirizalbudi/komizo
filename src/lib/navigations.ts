@@ -42,5 +42,15 @@ export function getAdminNavigations(): Navigation[] {
       url: '/admin/users/*/edit',
       description: 'Use this form to edit a exist user by entering their user information.',
     },
+    {
+      label: 'Create Genre',
+      url: '/admin/genres/create',
+      description: 'Use this form to create a new genre by entering information.',
+    },
+    {
+      label: 'Edit Genre',
+      url: '/admin/genres/*/edit',
+      description: 'Use this form to edit a exist gebre by entering information.',
+    },
   ]
 }
