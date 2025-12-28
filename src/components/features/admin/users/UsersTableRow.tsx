@@ -12,9 +12,10 @@ import React, { useState } from 'react'
 
 type UsersTableRowProps = {
   user: UserWithFormattedDate
+  index: number
 }
 
-const UsersTableRow = ({ user }: UsersTableRowProps) => {
+const UsersTableRow = ({ user, index }: UsersTableRowProps) => {
   const router = useRouter()
   const { data: session } = useSession()
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
@@ -43,6 +44,7 @@ const UsersTableRow = ({ user }: UsersTableRowProps) => {
       )}
 
       <Tr key={user.id}>
+        <Td>{index + 1}</Td>
         <Td className="font-medium text-white">{user.name}</Td>
         <Td>{user.email}</Td>
         <Td>{user.formattedCreatedAt}</Td>

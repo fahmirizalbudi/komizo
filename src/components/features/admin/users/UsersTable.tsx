@@ -11,6 +11,7 @@ const UsersTable = ({ users }: UsersTableProps) => {
     <Table>
       <THead>
         <Tr>
+          <Th>#</Th>
           <Th>Name</Th>
           <Th>Email</Th>
           <Th>Date Created</Th>
@@ -18,8 +19,8 @@ const UsersTable = ({ users }: UsersTableProps) => {
         </Tr>
       </THead>
       <TBody>
-        {users.map((user) => (
-          <UsersTableRow key={user.id} user={user} />
+        {users.map((user, i) => (
+          <UsersTableRow key={user.id} user={user} index={i} />
         ))}
       </TBody>
     </Table>
