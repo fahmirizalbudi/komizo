@@ -1,6 +1,7 @@
-import { Table, TBody, Th, THead, Tr } from '@/components/ui/Table'
+import { Table, TBody, Td, Th, THead, Tr } from '@/components/ui/Table'
 import { Genre } from '@/generated/prisma/client'
 import GenresTableRow from './GenresTableRow'
+import EmptyState from '@/components/ui/shared/EmptyState'
 
 type GenresTableProps = {
   genres: Genre[]
@@ -17,16 +18,13 @@ const GenresTable = ({ genres }: GenresTableProps) => {
         </Tr>
       </THead>
       <TBody>
-        {genres.map((genre, i) => (
-          <GenresTableRow key={genre.id} genre={genre} index={i} />
-        ))}
-        {/* {genres.length === 0 ? (
+        {genres.length === 0 ? (
           <Td colSpan={3}>
             <EmptyState />
           </Td>
         ) : (
           genres.map((genre, i) => <GenresTableRow key={genre.id} genre={genre} index={i} />)
-        )} */}
+        )}
       </TBody>
     </Table>
   )

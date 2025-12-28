@@ -1,6 +1,7 @@
-import { Table, TBody, Th, THead, Tr } from '@/components/ui/Table'
+import { Table, TBody, Td, Th, THead, Tr } from '@/components/ui/Table'
 import { UserWithFormattedDate } from '@/types/user'
 import UsersTableRow from './UsersTableRow'
+import EmptyState from '@/components/ui/shared/EmptyState'
 
 type UsersTableProps = {
   users: UserWithFormattedDate[]
@@ -19,9 +20,13 @@ const UsersTable = ({ users }: UsersTableProps) => {
         </Tr>
       </THead>
       <TBody>
-        {users.map((user, i) => (
-          <UsersTableRow key={user.id} user={user} index={i} />
-        ))}
+        {users.length === 0 ? (
+          <Td colSpan={3}>
+            <EmptyState />
+          </Td>
+        ) : (
+          users.map((user, i) => <UsersTableRow key={user.id} user={user} index={i} />)
+        )}
       </TBody>
     </Table>
   )

@@ -11,7 +11,9 @@ type TrProps = TableProps
 type ThProps = TableProps & {
   align?: 'left' | 'right'
 }
-type TdProps = ThProps
+type TdProps = ThProps & {
+  colSpan?: number
+}
 
 export const Table = ({ children, className }: TableProps) => {
   return (
@@ -37,6 +39,10 @@ export const Th = ({ children, align = 'left', className }: ThProps) => {
   return <th className={cn('px-4 py-4', align === 'right' && 'text-right', className)}>{children}</th>
 }
 
-export const Td = ({ children, align = 'left', className }: TdProps) => {
-  return <td className={cn('px-4 py-4', align === 'right' && 'text-right', className)}>{children}</td>
+export const Td = ({ children, align = 'left', className, colSpan }: TdProps) => {
+  return (
+    <td className={cn('px-4 py-4', align === 'right' && 'text-right', className)} colSpan={colSpan}>
+      {children}
+    </td>
+  )
 }
