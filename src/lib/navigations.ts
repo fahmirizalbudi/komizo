@@ -17,7 +17,7 @@ export function getAdminNavigations(): Navigation[] {
     {
       label: 'Manage Genres',
       url: '/admin/genres',
-      description: 'Organize comic genres by adding or updating categories.',
+      description: 'Organize comic genres by adding or updating genres.',
       icon: GenresIcon,
     },
     {
