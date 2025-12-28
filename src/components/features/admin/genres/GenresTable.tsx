@@ -19,9 +19,11 @@ const GenresTable = ({ genres }: GenresTableProps) => {
       </THead>
       <TBody>
         {genres.length === 0 ? (
-          <Td colSpan={3}>
-            <EmptyState />
-          </Td>
+          <Tr>
+            <Td colSpan={3}>
+              <EmptyState />
+            </Td>
+          </Tr>
         ) : (
           genres.map((genre, i) => <GenresTableRow key={genre.id} genre={genre} index={i} />)
         )}

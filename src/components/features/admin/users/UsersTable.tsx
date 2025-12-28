@@ -21,9 +21,11 @@ const UsersTable = ({ users }: UsersTableProps) => {
       </THead>
       <TBody>
         {users.length === 0 ? (
-          <Td colSpan={3}>
-            <EmptyState />
-          </Td>
+          <Tr>
+            <Td colSpan={3}>
+              <EmptyState />
+            </Td>
+          </Tr>
         ) : (
           users.map((user, i) => <UsersTableRow key={user.id} user={user} index={i} />)
         )}
