@@ -67,9 +67,9 @@ model VerificationToken {
 model Comic {
   id          String  @id @default(cuid())
   title       String
-  description String?
+  description String
   coverUrl    String?
-  author      String?
+  author      String
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
