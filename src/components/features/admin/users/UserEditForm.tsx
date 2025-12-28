@@ -1,6 +1,9 @@
 'use client'
 
 import { updateUser } from '@/app/admin/users/actions'
+import Form from '@/components/ui/Form'
+import FormInput from '@/components/ui/FormInput'
+import FormLabel from '@/components/ui/FormLabel'
 import SaveButton from '@/components/ui/shared/SaveButton'
 import { EMPTY_STRING } from '@/lib/constants'
 import { UserEditInput } from '@/types/user'
@@ -24,7 +27,8 @@ const UserEditForm = ({ initialUser }: UserEditFormProps) => {
     setUser({ ...user, [e.target.name]: e.target.value })
   }
 
-  const handleSave = async () => {
+  const handleSave = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
     await updateUser(user)
     router.push('/admin/users')
   }
@@ -33,46 +37,31 @@ const UserEditForm = ({ initialUser }: UserEditFormProps) => {
     <div className="w-full flex space-y-8">
       <div className="bg-zinc-900/50 p-8 w-full rounded-2xl border border-white/5">
         <h3 className="text-xl font-bold text-white mb-8 flex items-center gap-2">User Information</h3>
-        <div className="space-y-6">
-          <div>
-            <label className="block text-xs font-bold text-zinc-600 uppercase tracking-wider mb-2.5">Name</label>
-            <input
-              type="text"
-              name="name"
-              placeholder="e.g. Ren Ashbel"
-              className="w-full text-sm placeholder:font-medium bg-zinc-900 border border-white/5 rounded-xl px-5 py-3.5 text-zinc-200 focus:outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/50 transition-all placeholder-zinc-700"
-              value={user.name}
-              onChange={handleChange}
-            />
+        <Form className="space-y-6" onSubmit={handleSave}>
+          <div className="flex flex-col gap-2.5">
+            <FormLabel text="Name" bind="name" />
+            <FormInput name="name" value={user.name} onChange={handleChange} placeholder="e.g Ren Ashbel" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-xs font-bold text-zinc-600 uppercase tracking-wider mb-2.5">Email</label>
-              <input
-                type="email"
-                name="email"
-                placeholder="renashbel@example.com"
-                className="w-full text-sm placeholder:font-medium bg-zinc-900 border border-white/5 rounded-xl px-5 py-3.5 text-zinc-200 focus:outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/50 transition-all placeholder-zinc-700"
-                value={user.email}
-                onChange={handleChange}
-              />
+            <div className="flex flex-col gap-2.5">
+              <FormLabel text="Email" bind="email" />
+              <FormInput name="email" value={user.email} onChange={handleChange} placeholder="renashbel@example.com" />
             </div>
-            <div>
-              <label className="block text-xs font-bold text-zinc-600 uppercase tracking-wider mb-2.5">Password</label>
-              <input
+            <div className="flex flex-col gap-2.5">
+              <FormLabel text="Password" bind="password" />
+              <FormInput
                 type="password"
                 name="password"
-                placeholder="Enter password"
-                className="w-full text-sm placeholder:font-medium bg-zinc-900 border border-white/5 rounded-xl px-5 py-3.5 text-zinc-200 focus:outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/50 transition-all placeholder-zinc-700"
                 value={user.password}
                 onChange={handleChange}
+                placeholder="Enter password"
               />
             </div>
           </div>
           <div className="flex justify-end mt-8">
-            <SaveButton text="Save User" onCLick={handleSave} />
+            <SaveButton text="Save User" />
           </div>
-        </div>
+        </Form>
       </div>
     </div>
   )
