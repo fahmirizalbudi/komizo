@@ -42,7 +42,7 @@ const GenresTableRow = ({ genre, index }: GenresTableRowProps) => {
 
       <Tr key={genre.id}>
         <Td>{index + 1}</Td>
-        <Td className="font-medium text-white">{genre.name}</Td>
+        <Td>{genre.name}</Td>
         <Td align="right">
           <div className="flex justify-end gap-3">
             <EditButton onClick={handleEdit} />
