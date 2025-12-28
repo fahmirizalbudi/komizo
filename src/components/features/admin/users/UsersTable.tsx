@@ -22,7 +22,7 @@ const UsersTable = ({ users }: UsersTableProps) => {
       <TBody>
         {users.length === 0 ? (
           <Tr>
-            <Td colSpan={3}>
+            <Td colSpan={5}>
               <EmptyState />
             </Td>
           </Tr>
