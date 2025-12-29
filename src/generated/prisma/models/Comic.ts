@@ -162,9 +162,9 @@ export type ComicGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
 export type ComicGroupByOutputType = {
   id: string
   title: string
-  description: string | null
+  description: string
   coverUrl: string | null
-  author: string | null
+  author: string
   createdAt: Date
   updatedAt: Date
   _count: ComicCountAggregateOutputType | null
@@ -193,9 +193,9 @@ export type ComicWhereInput = {
   NOT?: Prisma.ComicWhereInput | Prisma.ComicWhereInput[]
   id?: Prisma.StringFilter<"Comic"> | string
   title?: Prisma.StringFilter<"Comic"> | string
-  description?: Prisma.StringNullableFilter<"Comic"> | string | null
+  description?: Prisma.StringFilter<"Comic"> | string
   coverUrl?: Prisma.StringNullableFilter<"Comic"> | string | null
-  author?: Prisma.StringNullableFilter<"Comic"> | string | null
+  author?: Prisma.StringFilter<"Comic"> | string
   createdAt?: Prisma.DateTimeFilter<"Comic"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Comic"> | Date | string
   genres?: Prisma.ComicGenreListRelationFilter
@@ -205,9 +205,9 @@ export type ComicWhereInput = {
 export type ComicOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
-  description?: Prisma.SortOrderInput | Prisma.SortOrder
+  description?: Prisma.SortOrder
   coverUrl?: Prisma.SortOrderInput | Prisma.SortOrder
-  author?: Prisma.SortOrderInput | Prisma.SortOrder
+  author?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   genres?: Prisma.ComicGenreOrderByRelationAggregateInput
@@ -220,9 +220,9 @@ export type ComicWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.ComicWhereInput[]
   NOT?: Prisma.ComicWhereInput | Prisma.ComicWhereInput[]
   title?: Prisma.StringFilter<"Comic"> | string
-  description?: Prisma.StringNullableFilter<"Comic"> | string | null
+  description?: Prisma.StringFilter<"Comic"> | string
   coverUrl?: Prisma.StringNullableFilter<"Comic"> | string | null
-  author?: Prisma.StringNullableFilter<"Comic"> | string | null
+  author?: Prisma.StringFilter<"Comic"> | string
   createdAt?: Prisma.DateTimeFilter<"Comic"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Comic"> | Date | string
   genres?: Prisma.ComicGenreListRelationFilter
@@ -232,9 +232,9 @@ export type ComicWhereUniqueInput = Prisma.AtLeast<{
 export type ComicOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
-  description?: Prisma.SortOrderInput | Prisma.SortOrder
+  description?: Prisma.SortOrder
   coverUrl?: Prisma.SortOrderInput | Prisma.SortOrder
-  author?: Prisma.SortOrderInput | Prisma.SortOrder
+  author?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   _count?: Prisma.ComicCountOrderByAggregateInput
@@ -248,9 +248,9 @@ export type ComicScalarWhereWithAggregatesInput = {
   NOT?: Prisma.ComicScalarWhereWithAggregatesInput | Prisma.ComicScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"Comic"> | string
   title?: Prisma.StringWithAggregatesFilter<"Comic"> | string
-  description?: Prisma.StringNullableWithAggregatesFilter<"Comic"> | string | null
+  description?: Prisma.StringWithAggregatesFilter<"Comic"> | string
   coverUrl?: Prisma.StringNullableWithAggregatesFilter<"Comic"> | string | null
-  author?: Prisma.StringNullableWithAggregatesFilter<"Comic"> | string | null
+  author?: Prisma.StringWithAggregatesFilter<"Comic"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Comic"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Comic"> | Date | string
 }
@@ -258,9 +258,9 @@ export type ComicScalarWhereWithAggregatesInput = {
 export type ComicCreateInput = {
   id?: string
   title: string
-  description?: string | null
+  description: string
   coverUrl?: string | null
-  author?: string | null
+  author: string
   createdAt?: Date | string
   updatedAt?: Date | string
   genres?: Prisma.ComicGenreCreateNestedManyWithoutComicInput
@@ -270,9 +270,9 @@ export type ComicCreateInput = {
 export type ComicUncheckedCreateInput = {
   id?: string
   title: string
-  description?: string | null
+  description: string
   coverUrl?: string | null
-  author?: string | null
+  author: string
   createdAt?: Date | string
   updatedAt?: Date | string
   genres?: Prisma.ComicGenreUncheckedCreateNestedManyWithoutComicInput
@@ -282,9 +282,9 @@ export type ComicUncheckedCreateInput = {
 export type ComicUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  description?: Prisma.StringFieldUpdateOperationsInput | string
   coverUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  author?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  author?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   genres?: Prisma.ComicGenreUpdateManyWithoutComicNestedInput
@@ -294,9 +294,9 @@ export type ComicUpdateInput = {
 export type ComicUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  description?: Prisma.StringFieldUpdateOperationsInput | string
   coverUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  author?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  author?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   genres?: Prisma.ComicGenreUncheckedUpdateManyWithoutComicNestedInput
@@ -306,9 +306,9 @@ export type ComicUncheckedUpdateInput = {
 export type ComicCreateManyInput = {
   id?: string
   title: string
-  description?: string | null
+  description: string
   coverUrl?: string | null
-  author?: string | null
+  author: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -316,9 +316,9 @@ export type ComicCreateManyInput = {
 export type ComicUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  description?: Prisma.StringFieldUpdateOperationsInput | string
   coverUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  author?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  author?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -326,9 +326,9 @@ export type ComicUpdateManyMutationInput = {
 export type ComicUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  description?: Prisma.StringFieldUpdateOperationsInput | string
   coverUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  author?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  author?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -399,9 +399,9 @@ export type ComicUpdateOneRequiredWithoutGenresNestedInput = {
 export type ComicCreateWithoutChaptersInput = {
   id?: string
   title: string
-  description?: string | null
+  description: string
   coverUrl?: string | null
-  author?: string | null
+  author: string
   createdAt?: Date | string
   updatedAt?: Date | string
   genres?: Prisma.ComicGenreCreateNestedManyWithoutComicInput
@@ -410,9 +410,9 @@ export type ComicCreateWithoutChaptersInput = {
 export type ComicUncheckedCreateWithoutChaptersInput = {
   id?: string
   title: string
-  description?: string | null
+  description: string
   coverUrl?: string | null
-  author?: string | null
+  author: string
   createdAt?: Date | string
   updatedAt?: Date | string
   genres?: Prisma.ComicGenreUncheckedCreateNestedManyWithoutComicInput
@@ -437,9 +437,9 @@ export type ComicUpdateToOneWithWhereWithoutChaptersInput = {
 export type ComicUpdateWithoutChaptersInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  description?: Prisma.StringFieldUpdateOperationsInput | string
   coverUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  author?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  author?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   genres?: Prisma.ComicGenreUpdateManyWithoutComicNestedInput
@@ -448,9 +448,9 @@ export type ComicUpdateWithoutChaptersInput = {
 export type ComicUncheckedUpdateWithoutChaptersInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  description?: Prisma.StringFieldUpdateOperationsInput | string
   coverUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  author?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  author?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   genres?: Prisma.ComicGenreUncheckedUpdateManyWithoutComicNestedInput
@@ -459,9 +459,9 @@ export type ComicUncheckedUpdateWithoutChaptersInput = {
 export type ComicCreateWithoutGenresInput = {
   id?: string
   title: string
-  description?: string | null
+  description: string
   coverUrl?: string | null
-  author?: string | null
+  author: string
   createdAt?: Date | string
   updatedAt?: Date | string
   chapters?: Prisma.ChapterCreateNestedManyWithoutComicInput
@@ -470,9 +470,9 @@ export type ComicCreateWithoutGenresInput = {
 export type ComicUncheckedCreateWithoutGenresInput = {
   id?: string
   title: string
-  description?: string | null
+  description: string
   coverUrl?: string | null
-  author?: string | null
+  author: string
   createdAt?: Date | string
   updatedAt?: Date | string
   chapters?: Prisma.ChapterUncheckedCreateNestedManyWithoutComicInput
@@ -497,9 +497,9 @@ export type ComicUpdateToOneWithWhereWithoutGenresInput = {
 export type ComicUpdateWithoutGenresInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  description?: Prisma.StringFieldUpdateOperationsInput | string
   coverUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  author?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  author?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   chapters?: Prisma.ChapterUpdateManyWithoutComicNestedInput
@@ -508,9 +508,9 @@ export type ComicUpdateWithoutGenresInput = {
 export type ComicUncheckedUpdateWithoutGenresInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  description?: Prisma.StringFieldUpdateOperationsInput | string
   coverUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  author?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  author?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   chapters?: Prisma.ChapterUncheckedUpdateManyWithoutComicNestedInput
@@ -617,9 +617,9 @@ export type $ComicPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     title: string
-    description: string | null
+    description: string
     coverUrl: string | null
-    author: string | null
+    author: string
     createdAt: Date
     updatedAt: Date
   }, ExtArgs["result"]["comic"]>
