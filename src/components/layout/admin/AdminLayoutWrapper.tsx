@@ -32,9 +32,9 @@ const AdminLayoutWrapper = ({ children }: AdminLayoutWrapperProps) => {
   }, [pathname, name])
 
   return (
-    <div className="flex h-screen w-full bg-neutral-950 text-zinc-300 antialiased font-sans overflow-hidden">
+    <div className="flex w-full bg-neutral-950 text-zinc-300 antialiased font-sans">
       <AdminSidebar pathname={pathname} />
-      <main className="flex-1 flex flex-col h-screen overflow-hidden bg-black/20 relative rounded-l-[3rem] px-8 md:px-12">
+      <main className="flex flex-col bg-black/20 relative rounded-l-[3rem] px-8 md:px-12 left-74 w-[calc(100%-18.5rem)] pb-20">
         <AdminHeader title={title} subtitle={subtitle} />
         {children}
       </main>
