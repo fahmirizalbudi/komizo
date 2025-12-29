@@ -34,7 +34,7 @@ const AdminLayoutWrapper = ({ children }: AdminLayoutWrapperProps) => {
   return (
     <div className="flex w-full bg-neutral-950 text-zinc-300 antialiased font-sans">
       <AdminSidebar pathname={pathname} />
-      <main className="flex flex-col bg-black/20 relative rounded-l-[3rem] px-8 md:px-12 left-74 w-[calc(100%-18.5rem)] pb-20">
+      <main className="flex min-h-screen flex-col bg-black/20 relative rounded-l-[3rem] px-8 md:px-12 left-74 w-[calc(100%-18.5rem)] pb-20">
         <AdminHeader title={title} subtitle={subtitle} />
         {children}
       </main>
