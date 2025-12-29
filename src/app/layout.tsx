@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased ${poppins.className}`}>{children}</body>
+      <body className={`antialiased custom-scrollbar custom-scrollbar-html ${poppins.className}`}>{children}</body>
     </html>
   )
 }
