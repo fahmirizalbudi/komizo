@@ -8,6 +8,7 @@ import FormInput from '@/components/ui/FormInput'
 import FormLabel from '@/components/ui/FormLabel'
 import Form from '@/components/ui/Form'
 import { createGenre } from '@/app/admin/genres/actions'
+import String from '@/lib/string'
 
 const GenreCreateForm = () => {
   const router = useRouter()

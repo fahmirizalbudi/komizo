@@ -1,13 +1,3 @@
-export {}
-
-declare global {
-  interface StringConstructor {
-    readonly Empty: string
-  }
+export default class String {
+  static readonly Empty = ''
 }
-
-Object.defineProperty(String, 'Empty', {
-  get() {
-    return ''
-  },
-})

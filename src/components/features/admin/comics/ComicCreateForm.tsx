@@ -11,6 +11,7 @@ import FileUpload from '@/components/ui/FileUpload'
 import FormMultipleSelect, { SelectOption } from '@/components/ui/FormMultipleSelect'
 import { getAllGenres } from '@/app/admin/genres/actions'
 import { createComic } from '@/app/admin/comics/actions'
+import String from '@/lib/string'
 
 const ComicCreateForm = () => {
   const router = useRouter()
