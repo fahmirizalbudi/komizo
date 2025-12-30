@@ -2,7 +2,6 @@
 
 import SaveButton from '@/components/ui/shared/SaveButton'
 import { GenreCreateInput, UserCreateInput } from '@/generated/prisma/models'
-import { EMPTY_STRING } from '@/lib/constants'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 import FormInput from '@/components/ui/FormInput'
@@ -13,7 +12,7 @@ import { createGenre } from '@/app/admin/genres/actions'
 const GenreCreateForm = () => {
   const router = useRouter()
   const [genre, setGenre] = useState<GenreCreateInput>({
-    name: EMPTY_STRING,
+    name: String.Empty,
   })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -2,7 +2,6 @@
 
 import SaveButton from '@/components/ui/shared/SaveButton'
 import { ComicCreateInput } from '@/generated/prisma/models'
-import { EMPTY_STRING } from '@/lib/constants'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import FormInput from '@/components/ui/FormInput'
@@ -17,9 +16,9 @@ const ComicCreateForm = () => {
   const router = useRouter()
   const [genreOptions, setGenreOptions] = useState<SelectOption[]>([])
   const [comic, setComic] = useState<ComicCreateInput>({
-    title: EMPTY_STRING,
-    description: EMPTY_STRING,
-    author: EMPTY_STRING,
+    title: String.Empty,
+    description: String.Empty,
+    author: String.Empty,
   })
   const [cover, setCover] = useState<File | null>(null)
   const [coverPreview, setCoverPreview] = useState<string | null>(null)

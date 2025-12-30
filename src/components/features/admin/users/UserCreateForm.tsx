@@ -2,7 +2,6 @@
 
 import SaveButton from '@/components/ui/shared/SaveButton'
 import { UserCreateInput } from '@/generated/prisma/models'
-import { EMPTY_STRING } from '@/lib/constants'
 import { createUser } from '@/app/admin/users/actions'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
@@ -13,9 +12,9 @@ import Form from '@/components/ui/Form'
 const UserCreateForm = () => {
   const router = useRouter()
   const [user, setUser] = useState<UserCreateInput>({
-    name: EMPTY_STRING,
-    email: EMPTY_STRING,
-    password: EMPTY_STRING,
+    name: String.Empty,
+    email: String.Empty,
+    password: String.Empty,
   })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
