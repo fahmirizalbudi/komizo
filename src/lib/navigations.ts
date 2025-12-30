@@ -62,5 +62,15 @@ export function getAdminNavigations(): Navigation[] {
       url: '/admin/comics/*/edit',
       description: 'Use this form to edit an existing comic by updating its information.',
     },
+    {
+      label: 'Manage Chapters',
+      url: '/admin/comics/*/chapters',
+      description: 'Manage chapters for the selected comic, including creating, editing, and deleting chapters.',
+    },
+    {
+      label: 'Create Chapter',
+      url: '/admin/comics/*/chapters/create',
+      description: 'Use this form to create a new chapter for the selected comic.',
+    },
   ]
 }

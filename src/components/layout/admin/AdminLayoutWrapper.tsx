@@ -5,7 +5,6 @@ import AdminHeader from './AdminHeader'
 import AdminSidebar from './AdminSidebar'
 import { usePathname } from 'next/navigation'
 import { getAdminNavigations } from '@/lib/navigations'
-import { Session } from 'next-auth'
 import { useSession } from 'next-auth/react'
 
 type AdminLayoutWrapperProps = {

@@ -10,6 +10,7 @@ import { ComicWithGenresAndChapters } from '@/types/comic'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
+import ChapterButton from './ChapterButton'
 
 type ComicsTableRowProps = {
   comic: ComicWithGenresAndChapters
@@ -29,6 +30,11 @@ const ComicsTableRow = ({ comic, index }: ComicsTableRowProps) => {
   const handleDelete = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     await deleteComic(comic.id)
+  }
+
+  const redirectToChapters = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    router.push(`/admin/comics/${comic.id}/chapters`)
   }
 
   return (
@@ -54,7 +60,7 @@ const ComicsTableRow = ({ comic, index }: ComicsTableRowProps) => {
                   'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png'
                 }
                 className="w-full h-full object-cover"
-                alt="One Piece"
+                alt={comic.title}
               />
             </div>
             <div className="flex flex-col gap-1.5">
@@ -77,6 +83,7 @@ const ComicsTableRow = ({ comic, index }: ComicsTableRowProps) => {
         <Td>{comic.chapters.length}</Td>
         <Td align="right">
           <div className="flex justify-end gap-3">
+            <ChapterButton onClick={redirectToChapters} />
             <EditButton onClick={handleEdit} />
             <DeleteButton onClick={() => setIsModalOpen(true)} />
           </div>
