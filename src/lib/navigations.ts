@@ -52,5 +52,15 @@ export function getAdminNavigations(): Navigation[] {
       url: '/admin/genres/*/edit',
       description: 'Use this form to edit a exist gebre by entering information.',
     },
+    {
+      label: 'Create Comic',
+      url: '/admin/comics/create',
+      description: 'Use this form to create a new comic by entering comic information.',
+    },
+    {
+      label: 'Edit Comic',
+      url: '/admin/comics/*/edit',
+      description: 'Use this form to edit an existing comic by updating its information.',
+    },
   ]
 }
