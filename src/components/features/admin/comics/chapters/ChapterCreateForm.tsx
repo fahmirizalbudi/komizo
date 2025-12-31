@@ -8,7 +8,7 @@ import FormInput from '@/components/ui/FormInput'
 import FormLabel from '@/components/ui/FormLabel'
 import Form from '@/components/ui/Form'
 import MultipleFileUpload from '@/components/ui/MultipleFileUpload'
-import { createChapterWithPages } from '@/app/admin/comics/[id]/chapters/actions'
+import { createChapter } from '@/app/admin/comics/[id]/chapters/actions'
 import String from '@/lib/string'
 
 const ChapterCreateForm = () => {
@@ -32,7 +32,24 @@ const ChapterCreateForm = () => {
 
   const handleSave = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    await createChapterWithPages(chapter, pages)
+    const formData = new FormData()
+    pages.forEach((file) => formData.append('pages', file))
+    formData.append('comicId', id)
+    formData.append('chapterNumber', chapter.number.toString())
+
+    const res = await fetch('/api/upload/chapters', {
+      method: 'POST',
+      body: formData,
+    })
+
+    if (!res.ok) throw new Error('Upload failed')
+
+    const { pageUrls } = await res.json()
+
+    await createChapter({
+      ...chapter,
+      pages: pageUrls,
+    })
     router.push(`/admin/comics/${id}/chapters`)
   }
 
