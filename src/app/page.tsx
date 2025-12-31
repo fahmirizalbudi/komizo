@@ -16,7 +16,6 @@ const Komizo = async () => {
         comicTitleTop="Naruto"
         comicTitleBottom="Shippuden"
         comicGenres="Action, Adventure"
-        comicChapter={1}
       />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <SectionHeader />
@@ -29,7 +28,7 @@ const Komizo = async () => {
                 comic.coverUrl ??
                 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png'
               }
-              ch={`${comic.chapters.at(0)?.number ?? String.Empty}`}
+              ch={`${comic.chapters.at(comic.chapters.length - 1)?.number ?? String.Empty}`}
               href={`comics/${comic.id}/detail`}
             />
           ))}

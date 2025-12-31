@@ -6,7 +6,6 @@ type HeroSectionProps = {
   comicTitleBottom: string
   comicGenres: string
   comicRating: number
-  comicChapter: number
 }
 
 const HeroSection = ({
@@ -15,7 +14,6 @@ const HeroSection = ({
   comicTitleBottom,
   comicGenres,
   comicRating,
-  comicChapter
 }: HeroSectionProps) => {
   return (
     <div className="relative h-[65vh] w-full overflow-hidden">
@@ -35,7 +33,7 @@ const HeroSection = ({
           </div>
           <div className="flex gap-4">
             <button className="pl-6 pr-4 py-3 bg-brand hover:bg-brand-hover text-white rounded-xl text-sm font-medium shadow-lg shadow-brand/25 transition-all transform hover:-translate-y-1 flex items-center gap-2 cursor-pointer">
-              Read Chapter {comicChapter} <ChevronIcon width={22} height={22} className='rotate-180' />
+              See Detail <ChevronIcon width={22} height={22} className="rotate-180" />
             </button>
           </div>
         </div>
