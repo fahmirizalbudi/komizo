@@ -30,7 +30,7 @@ const Komizo = async () => {
                 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png'
               }
               ch={`${comic.chapters.at(0)?.number ?? String.Empty}`}
-              href={`comic/${comic.id}`}
+              href={`comics/${comic.id}/detail`}
             />
           ))}
         </div>

@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from 'next/link'
 
 export type ComicCardProps = {
   title: string
@@ -10,7 +10,7 @@ export type ComicCardProps = {
 
 const ComicCard = ({ title, img, ch, isHot = false, href }: ComicCardProps) => {
   return (
-    <Link className="group cursor-pointer" href={href}>
+    <Link className="group cursor-pointer" href={ch ? href : '#'}>
       <div className="relative aspect-2/3 rounded-xl overflow-hidden mb-3 shadow-lg shadow-black/50 ring-1 ring-white/5 group-hover:ring-brand/50 transition-all duration-300">
         <img
           src={img}
