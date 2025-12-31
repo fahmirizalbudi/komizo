@@ -2,10 +2,10 @@ import Credentials from 'next-auth/providers/credentials'
 import { PrismaAdapter } from '@next-auth/prisma-adapter'
 import bcrypt from 'bcryptjs'
 import { prisma } from '@/lib/prisma'
-import { User as NextAuthUser, getServerSession, Session } from 'next-auth'
+import { User as NextAuthUser, getServerSession, Session, NextAuthOptions } from 'next-auth'
 import { JWT } from 'next-auth/jwt'
 
-export const authOptions = {
+export const authOptions: NextAuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
   adapter: PrismaAdapter(prisma),
   session: { strategy: 'jwt' as const },
@@ -44,6 +44,11 @@ export const authOptions = {
     async session({ session, token }: { session: Session; token: JWT }) {
       if (session.user) session.user.id = token.id as string
       return session
+    },
+
+    async redirect({ url, baseUrl }) {
+      if (url === baseUrl) return `${baseUrl}/admin`
+      return url
     },
   },
 }
