@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { BookmarksIcon, SearchIcon } from '../ui/Icon'
 
 const NavigationBar = () => {
@@ -5,7 +6,7 @@ const NavigationBar = () => {
     <nav className="fixed top-0 w-full z-50 bg-dark-900/80 backdrop-blur-md border-b border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <a href="#" className="shrink-0 group">
+          <Link href="/" className="shrink-0 group">
             <svg
               width={130}
               height={40}
@@ -21,7 +22,7 @@ const NavigationBar = () => {
               </text>
               <circle cx={132} cy={28} r={3} fill="#6366f1" className="group-hover:animate-pulse" />
             </svg>
-          </a>
+          </Link>
           <div className="flex items-center gap-6">
             <button className="text-zinc-400 hover:text-white transition-colors text-xl">
               <SearchIcon width={22} height={22} />

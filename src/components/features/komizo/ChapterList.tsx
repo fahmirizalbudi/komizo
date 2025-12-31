@@ -5,21 +5,21 @@ import Link from 'next/link'
 const ChapterTile = ({ chapter }: { chapter: Chapter }) => {
   return (
     <Link
-      href={`/comics/${chapter.comicId}/chapters/${chapter.number}`}
+      href={`/chapters/${chapter.id}/read`}
       className="group w-full flex items-center justify-between py-4 px-6 rounded-xl bg-zinc-900/30 border border-white/5 cursor-pointer"
     >
       <div className="flex flex-col gap-1">
         <div className="flex items-baseline gap-3">
-          <h4 className="text-sm-plus font-medium text-zinc-100">Chapter {chapter.number}</h4>
+          <h4 className="text-sm font-medium text-zinc-100">Chapter {chapter.number}</h4>
         </div>
 
         {chapter.title ? (
-          <span className="text-sm text-zinc-400 font-regular truncate max-w-50 sm:max-w-md">{chapter.title}</span>
+          <span className="text-[13px] text-zinc-400 font-regular truncate max-w-50 sm:max-w-md">{chapter.title}</span>
         ) : (
-          <span className="text-sm text-zinc-600 italic">&nbsp;</span>
+          <span className="text-[13px] text-zinc-600 italic">&nbsp;</span>
         )}
       </div>
-      <span className="text-sm text-zinc-400 font-regular truncate max-w-50 sm:max-w-md">
+      <span className="text-[13px] text-zinc-400 font-regular truncate max-w-50 sm:max-w-md">
         {formatDate(chapter.createdAt)}
       </span>
     </Link>
