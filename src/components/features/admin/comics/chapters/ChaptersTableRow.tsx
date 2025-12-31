@@ -1,5 +1,6 @@
 'use client'
 
+import { deleteChapter } from '@/app/admin/comics/[id]/chapters/actions'
 import DeleteButton from '@/components/ui/shared/DeleteButton'
 import DeleteModal from '@/components/ui/shared/DeleteModal'
 import { Td, Tr } from '@/components/ui/Table'
@@ -19,13 +20,9 @@ const ChaptersTableRow = ({ chapter, index }: ChaptersTableRowProps) => {
   const { data: session } = useSession()
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
 
-  const handleEdit = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault()
-    router.push(`${chapter.id}/edit`)
-  }
-
   const handleDelete = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
+    await deleteChapter(chapter.id, chapter.comicId)
   }
 
   return (
