@@ -37,7 +37,7 @@ const ChapterList = ({ chapters }: { chapters: Chapter[] }) => {
         </h3>
         <span className="text-lg font-medium text-brand">({chapters.length})</span>
       </div>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-4">
         {chapters.length > 0 ? (
           chapters.map((chapter) => <ChapterTile key={chapter.id} chapter={chapter} />)
         ) : (

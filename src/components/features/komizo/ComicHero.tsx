@@ -1,5 +1,6 @@
 import { ComicWithGenresAndChapters } from '@/types/comic'
 import { BookmarksIcon, ChevronIcon, ProfileIcon } from '../../ui/Icon'
+import Link from 'next/link'
 
 type ComicHeroProps = {
   comic: ComicWithGenresAndChapters
@@ -63,9 +64,12 @@ const ComicHero = ({ comic }: ComicHeroProps) => {
             </p>
 
             <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-2">
-              <button className="pl-6 pr-4 py-3 bg-brand hover:bg-brand-hover text-white rounded-xl text-sm font-medium shadow-lg shadow-brand/25 transition-all transform hover:-translate-y-1 flex items-center gap-2 cursor-pointer">
+              <Link
+                href={`/chapters/${comic.chapters.at(0)!.id}/read`}
+                className="pl-6 pr-4 py-3 bg-brand hover:bg-brand-hover text-white rounded-xl text-sm font-medium shadow-lg shadow-brand/25 transition-all transform hover:-translate-y-1 flex items-center gap-2 cursor-pointer"
+              >
                 Read First Chapter <ChevronIcon width={20} height={20} className="rotate-180" />
-              </button>
+              </Link>
 
               <button className="px-6 py-3 bg-white/5 hover:bg-white/10 backdrop-blur-md text-white rounded-xl text-sm font-medium border border-white/10 transition-all flex items-center gap-2 cursor-pointer hover:border-white/20">
                 <BookmarksIcon width={22} height={22} /> Bookmark
