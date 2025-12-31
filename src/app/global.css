@@ -9,6 +9,10 @@
   --color-brand-hover: #4f46e5;
   --color-brand-glow: rgba(99, 102, 241, 0.5);
 
+  --color-dark-900: #09090B;
+  --color-dark-800: #18181b;
+  --color-dark-700: #27272a;
+
   --shadow-glow: 0 0 20px -5px rgba(99, 102, 241, 0.3);
 }
 
