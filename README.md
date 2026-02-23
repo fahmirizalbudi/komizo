@@ -15,11 +15,11 @@
 
 <br />
 
-## 📔 Komizo
+## Komizo
 
-Komizo is a web application for reading comics online with a fast, modern and responsive interface. Built with Next.js, TypeScript, and PostgreSQL to ensure high performance and data reliability. Key features include:
+Komizo is a high-performance web application for online comic consumption, featuring a modern and responsive interface. Developed with Next.js, TypeScript, and PostgreSQL, the platform ensures technical reliability and a seamless user experience.
 
-## 🖼️ Preview
+## Preview
 
 <img src="komizo_03.png" />
 <br />
@@ -27,34 +27,34 @@ Komizo is a web application for reading comics online with a fast, modern and re
 <br />
 <img src="komizo_01.png" />
 
-## ✨ Features
+## Features
 
-- **📳 Seamless Reading:** Optimized comic viewer with smooth navigation between chapters.
-- **🛡️ User Management:** administrative control to view and manage registered users.
-- **📚 Comic Management:** Full CRUD (Create, Read, Update, Delete) system for comic titles, including cover uploads and metadata.
-- **📑 Chapter Management:** Organize comic chapters, upload pages, and manage release order efficiently.
-- **🏷️ Genre Management:** Create and assign genres to organize the comic library structure.
-- **⚡ High Performance:** Powered by Next.js for server-side rendering and fast page loads.
-- **📱 Responsive Design:** Modern UI/UX that looks great on desktop and mobile devices.
-- **🛡️ Type Safe:** Built with TypeScript for robust and maintainable code.
-- **🗄️ Reliable Data:** Uses PostgreSQL for secure and structured data management.
+- **Optimized Reader:** A streamlined comic viewer with efficient chapter navigation.
+- **User Management:** Administrative interface for overseeing registered user accounts.
+- **Comic Administration:** Comprehensive CRUD system for comic metadata and cover assets.
+- **Chapter Management:** Structured system for managing chapters, page uploads, and release sequencing.
+- **Taxonomy Management:** Flexible genre system to maintain library organization.
+- **High Performance:** Server-side rendering via Next.js for rapid page delivery.
+- **Responsive Architecture:** Adaptable UI/UX optimized for both desktop and mobile environments.
+- **Type Safety:** Robust codebase maintained through strict TypeScript implementation.
+- **Data Integrity:** Secure and structured data persistence using PostgreSQL.
 
-## 👩‍💻 Tech Stack
+## Tech Stack
 
-- **Next.js**: The React Framework for the Web.
+- **Next.js**: The React framework for production-grade web applications.
 - **TypeScript**: A strongly typed programming language that builds on JavaScript.
-- **PostgreSQL**: The world's most advanced open source relational database.
+- **PostgreSQL**: Advanced open-source relational database system.
 
-## 📦 Getting Started
+## Getting Started
 
-To get a local copy of this project up and running, follow these steps.
+Follow these instructions to set up a local development environment.
 
-### 🚀 Prerequisites
+### Prerequisites
 
-- **Node.js** & **NPM**.
-- **PostgreSQL** database installed and running.
+- **Node.js** and **NPM**.
+- **PostgreSQL** database instance.
 
-## 🛠️ Installation
+## Installation
 
 1. **Clone the repository:**
 
@@ -69,21 +69,26 @@ To get a local copy of this project up and running, follow these steps.
    npm install
    ```
 
-3. **Start the development server:**
+3. **Configure Environment Variables:**
+
+   Create a `.env` file in the root directory and configure your PostgreSQL connection strings and other necessary environment variables.
+
+4. **Start the development server:**
 
    ```bash
    npm run dev
    ```
 
-## 📖 Usage
+## Usage
 
-### ✔ Running the Application
+### Execution Commands
 
-- **Development mode:** `npm run dev`.
-- **Production mode:** `npm run build`.
+- **Development:** `npm run dev`
+- **Build:** `npm run build`
+- **Production:** `npm start`
 
-> Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The application will be accessible at [http://localhost:3000](http://localhost:3000).
 
-## 📜 License
+## License
 
-All rights reserved. This project is for educational purposes only and cannot be used or distributed without permission.
+All rights reserved. This project is intended for educational purposes only and may not be distributed or utilized commercially without explicit permission.
